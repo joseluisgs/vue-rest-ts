@@ -1,14 +1,17 @@
 <template>
   <Header />
   <div class="container">
-    <div class="section">
       <div class="columns is-centered">
-        <div class="column is-10">
+        <div class="column is-6">
           <h1 class="is-size-3">Usuarios</h1>
-          <TablaUsuarios :usuarios="usuarios" class="mt-4"/>
+          <!-- A un componente (hijo) le pasamos datos a través de propiedades
+          Recibimos datos del hijo a traves de los eventos -->
+          <TablaUsuarios
+            :usuarios="usuarios"
+            @eliminar-usuario="removeUser"
+            class="mt-4"/>
         </div>
       </div>
-    </div>
   </div>
   <Footer />
 </template>
@@ -41,11 +44,32 @@ export default defineComponent({
    * Al crerame, consultamos los usuarios
    */
   async created() {
-    try {
-      this.usuarios = await apiUsers.findAll();
-    } catch (err) {
-      console.log(err);
-    }
+    await this.findAllUsers();
+  },
+
+  // Mis métodos
+  methods: {
+    /**
+     * Obtiene toda la lista de usuarios
+     */
+    async findAllUsers() {
+      try {
+        this.usuarios = await apiUsers.findAll();
+      } catch (err) {
+        console.log(err);
+      }
+    },
+    /**
+     * Borramos un usuario en la api y en nuestro modelo de datos
+     */
+    async removeUser(user: IUser) {
+      try {
+        await apiUsers.remove(user);
+        this.usuarios = this.usuarios.filter((u) => u.id !== user.id);
+      } catch (err) {
+        console.log(err);
+      }
+    },
   },
 });
 </script>
