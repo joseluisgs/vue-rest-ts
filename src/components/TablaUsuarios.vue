@@ -1,9 +1,9 @@
 <template>
   <div id="tabla-usuarios">
-    <div v-if="!usuarios.length" class="notification is-danger is-light">
+    <div v-if="!usuarios?.length" class="notification is-danger is-light">
       No existen usuarios
     </div>
-    <table class="table is-hoverable is-striped">
+    <table class="table is-hoverable is-striped" v-if="usuarios.length>0">
       <thead>
         <tr>
           <th>Nombre</th>

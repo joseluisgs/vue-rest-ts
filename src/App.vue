@@ -43,7 +43,6 @@ export default defineComponent({
   async created() {
     try {
       this.usuarios = await apiUsers.findAll();
-      console.log(this.usuarios);
     } catch (err) {
       console.log(err);
     }
