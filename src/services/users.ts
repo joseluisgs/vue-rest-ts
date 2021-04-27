@@ -1,7 +1,12 @@
 // Cliente de la Api Rest
+import axios from 'axios';
+import IUser from '@/interfaces/IUser';
+
+const URL = 'https://jsonplaceholder.typicode.com/users';
+
 export default {
-  findAll() {
-    // Método para obtener la lista de usuarios
+  async findAll(): Promise<IUser[]> {
+    return (await axios.get(URL)).data;
   },
   save() {
     // Método para crear un usuario
