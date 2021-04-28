@@ -1,12 +1,14 @@
 <template>
   <Header />
-  <div class="container">
+  <div class="container" id="principal">
     <div class="columns is-centered">
-      <div class="column is-7">
+      <div class="column is-8">
         <h1 class="is-size-3">Usuarios</h1>
         <!-- A un componente (hijo) le pasamos datos a través de propiedades
           Recibimos datos del hijo a traves de los eventos -->
-        <TablaUsuarios :usuarios="usuarios" @eliminar-usuario="remove" class="mt-4" />
+        <FormularioUsuario @crear-usuario="save" />
+        <!-- Tabla de usuarios -->
+        <TablaUsuarios :usuarios="usuarios" @eliminar-usuario="remove" class="m-4" />
       </div>
     </div>
   </div>
@@ -18,6 +20,7 @@ import { defineComponent } from 'vue';
 import Header from '@/components/Header.vue';
 import Footer from '@/components/Footer.vue';
 import TablaUsuarios from '@/components/TablaUsuarios.vue';
+import FormularioUsuario from '@/components/FormularioUsuario.vue';
 import IUser from '@/interfaces/IUser';
 import apiUsers from '@/services/users';
 
@@ -29,6 +32,7 @@ export default defineComponent({
     Header,
     Footer,
     TablaUsuarios,
+    FormularioUsuario,
   },
 
   // Mi modelo de datos
@@ -79,8 +83,21 @@ export default defineComponent({
         console.error(error);
       }
     },
+
+    /**
+     * Salva un usuario a través de la Api Rest, y en nuestro modelo de datos
+     */
+    async save(user: IUser) {
+      try {
+        const usuarioCreado = await apiUsers.save(user);
+        this.usuarios = [...this.usuarios, usuarioCreado];
+      } catch (error) {
+        console.error(error);
+      }
+    },
   },
 });
 </script>
 
-<style lang="scss"></style>
+<style lang="scss">
+</style>
