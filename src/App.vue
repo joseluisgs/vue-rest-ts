@@ -1,17 +1,14 @@
 <template>
   <Header />
   <div class="container">
-      <div class="columns is-centered">
-        <div class="column is-6">
-          <h1 class="is-size-3">Usuarios</h1>
-          <!-- A un componente (hijo) le pasamos datos a través de propiedades
+    <div class="columns is-centered">
+      <div class="column is-7">
+        <h1 class="is-size-3">Usuarios</h1>
+        <!-- A un componente (hijo) le pasamos datos a través de propiedades
           Recibimos datos del hijo a traves de los eventos -->
-          <TablaUsuarios
-            :usuarios="usuarios"
-            @eliminar-usuario="removeUser"
-            class="mt-4"/>
-        </div>
+        <TablaUsuarios :usuarios="usuarios" @eliminar-usuario="remove" class="mt-4" />
       </div>
+    </div>
   </div>
   <Footer />
 </template>
@@ -44,7 +41,7 @@ export default defineComponent({
    * Al crerame, consultamos los usuarios
    */
   async created() {
-    await this.findAllUsers();
+    await this.findAll();
   },
 
   // Mis métodos
@@ -52,7 +49,7 @@ export default defineComponent({
     /**
      * Obtiene toda la lista de usuarios
      */
-    async findAllUsers() {
+    async findAll() {
       try {
         this.usuarios = await apiUsers.findAll();
       } catch (err) {
@@ -62,12 +59,24 @@ export default defineComponent({
     /**
      * Borramos un usuario en la api y en nuestro modelo de datos
      */
-    async removeUser(user: IUser) {
+    async remove(user: IUser) {
       try {
         await apiUsers.remove(user);
         this.usuarios = this.usuarios.filter((u) => u.id !== user.id);
       } catch (err) {
         console.log(err);
+      }
+    },
+
+    /**
+     * Actualiza un usuario a través de la Api Rest, y en nuestro modelo de datos
+     */
+    async update(user: IUser) {
+      try {
+        const usuarioActualizado = await apiUsers.update(user);
+        this.usuarios = this.usuarios.map((u) => (u.id === user.id ? usuarioActualizado : u));
+      } catch (error) {
+        console.error(error);
       }
     },
   },
