@@ -12,8 +12,11 @@ Cliente Vue.js escrito en TypeSript que consume una API REST.
   - [Sobre el proyecto](#sobre-el-proyecto)
   - [Despliegue](#despliegue)
     - [Docker](#docker)
-    - [Docker Compose](#docker-compose)
-    - [Docker Hub](#docker-hub)
+      - [Docker Compose](#docker-compose)
+      - [Docker Hub](#docker-hub)
+    - [Electron](#electron)
+      - [Development Server](#development-server)
+      - [Build App](#build-app)
   - [Project setup](#project-setup)
     - [Compiles and hot-reloads for development](#compiles-and-hot-reloads-for-development)
     - [Compiles and minifies for production](#compiles-and-minifies-for-production)
@@ -34,12 +37,24 @@ Esta proyecto se puede desplegar con Docker si te gusta ya sea a través de su D
 - docker build -t joseluisgs/vue-rest-ts .
 - docker run -it -p 8000:8000 --rm --name vue-rest-ts-client joseluisgs/vue-rest-ts
 ```
-### Docker Compose
+#### Docker Compose
 ```bash
 - docker-compose up -d
 ```
-### Docker Hub
+#### Docker Hub
 Disponible en: https://hub.docker.com/r/joseluisgs/vue-rest-ts
+
+### Electron
+Se ha implementado el despliegue multiplataforma con Electron.
+
+#### Development Server
+```
+npm run electron:serve
+```
+#### Build App
+```
+npm run electron:build
+```
 
 ## Project setup
 ```

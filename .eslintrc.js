@@ -11,6 +11,12 @@ module.exports = {
   parserOptions: {
     ecmaVersion: 2020,
   },
+  // Electrón
+  settings: {
+    'import/core-modules': [
+      'electron',
+    ],
+  },
   rules: {
     'no-console': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
     'no-debugger': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
@@ -21,5 +27,7 @@ module.exports = {
         comments: 120,
       },
     ],
+    // Electrón
+    'import/no-extraneous-dependencies': ['error', { devDependencies: true }],
   },
 };
