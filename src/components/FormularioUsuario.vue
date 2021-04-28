@@ -100,7 +100,7 @@ export default defineComponent({
       }
 
       this.$emit('crear-usuario', this.usuario);
-      this.$refs.name.focus();
+      (this.$refs.name as HTMLInputElement).focus();
       this.error = false;
       this.correcto = true;
       this.procesando = false;
