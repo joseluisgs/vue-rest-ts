@@ -10,6 +10,10 @@ Cliente Vue.js escrito en TypeSript que consume una API REST.
 
 - [Vue Rest TS](#vue-rest-ts)
   - [Sobre el proyecto](#sobre-el-proyecto)
+  - [Despliegue](#despliegue)
+    - [Docker](#docker)
+    - [Docker Compose](#docker-compose)
+    - [Docker Hub](#docker-hub)
   - [Project setup](#project-setup)
     - [Compiles and hot-reloads for development](#compiles-and-hot-reloads-for-development)
     - [Compiles and minifies for production](#compiles-and-minifies-for-production)
@@ -21,6 +25,20 @@ Cliente Vue.js escrito en TypeSript que consume una API REST.
 
 ## Sobre el proyecto
 El proyecto consiste en hacer un cliente de una API REST en Vue.js, usando TypeScript con el objetivo de completar la formación del grupo de trabajo. Como hoja de estilos se ha usado Bulma. Este cliente consume una [API REST ficticia](https://jsonplaceholder.typicode.com/users). 
+
+## Despliegue
+### Docker
+Esta proyecto se puede desplegar con Docker si te gusta ya sea a través de su Dockerfile o a otraves de [Docker Hub](https://hub.docker.com/r/joseluisgs/vue-rest-ts), para ello:
+```bash
+- docker build -t joseluisgs/vue-rest-ts .
+- docker run -it -p 8000:8000 --rm --name vue-rest-ts-client joseluisgs/vue-rest-ts
+```
+### Docker Compose
+```bash
+- docker-compose up -d
+```
+### Docker Hub
+Disponible en: https://hub.docker.com/r/joseluisgs/ts-api-rest
 
 ## Project setup
 ```

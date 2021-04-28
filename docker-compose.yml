@@ -1,0 +1,14 @@
+# Indicamos la versión
+version: '3.7'
+
+# Mis servicios
+# Iniciamos los servicios
+services:
+
+   # Client
+  vue-rest-ts:
+    container_name: "rest-client"
+    # image: "joseluisgs/vue-chat-socket-client"
+    build: .
+    ports:
+      - 8080:8080
