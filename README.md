@@ -19,6 +19,7 @@ Cliente Vue.js escrito en TypeSript que consume una API REST.
     - [Compiles and minifies for production](#compiles-and-minifies-for-production)
     - [Lints and fixes files](#lints-and-fixes-files)
     - [Customize configuration](#customize-configuration)
+  - [API Rest](#api-rest)
   - [Autor](#autor)
   - [Licencia](#licencia)
   - [Agradecimientos](#agradecimientos)
@@ -38,7 +39,7 @@ Esta proyecto se puede desplegar con Docker si te gusta ya sea a través de su D
 - docker-compose up -d
 ```
 ### Docker Hub
-Disponible en: https://hub.docker.com/r/joseluisgs/ts-api-rest
+Disponible en: https://hub.docker.com/r/joseluisgs/vue-rest-ts
 
 ## Project setup
 ```
@@ -62,6 +63,9 @@ npm run lint
 
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
+
+## API Rest
+La [API REST ficticia](https://jsonplaceholder.typicode.com/users) puede consultarse y consumirse con el fichero [Users](./thunder-collection_Users.json). Que se puede usar con la extensión de VS Code [Thunder Client](https://marketplace.visualstudio.com/items?itemName=rangav.vscode-thunder-client).
 
 ## Autor
 
