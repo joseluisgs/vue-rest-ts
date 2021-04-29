@@ -1,5 +1,5 @@
 # Vue Rest TS
-Cliente Vue.js escrito en TypeSript que consume una API REST. 
+Cliente Vue.js escrito en TypeSript que consume una API REST. Un CRUD en toda regla a motivo de ejemplo. Despliegue con Docker y Electron. 
 
 [![Vue Ready](https://img.shields.io/badge/Vue.js-%20Ready-%2342b983)](https://es.vuejs.org/)
 [![NodeJS](https://img.shields.io/badge/NodeJS-Ready-83BA63)](https://nodejs.org/es/)
@@ -28,7 +28,7 @@ Cliente Vue.js escrito en TypeSript que consume una API REST.
   - [Agradecimientos](#agradecimientos)
 
 ## Sobre el proyecto
-El proyecto consiste en hacer un cliente de una API REST en Vue.js, usando TypeScript con el objetivo de completar la formación del grupo de trabajo. Como hoja de estilos se ha usado Bulma. Este cliente consume una [API REST ficticia](https://jsonplaceholder.typicode.com/users). 
+El proyecto consiste en hacer un cliente de una API REST en Vue.js, usando TypeScript con el objetivo de completar la formación del grupo de trabajo. Como hoja de estilos se ha usado Bulma. Este cliente consume una [API REST ficticia](https://jsonplaceholder.typicode.com/users) realizando un CRUD. El despliegue está realizado con Docker y Electron (multiplataforma).
 
 ## Despliegue
 ### Docker
