@@ -28,7 +28,7 @@ Cliente Vue.js escrito en TypeSript que consume una API REST. Un CRUD en toda re
   - [Agradecimientos](#agradecimientos)
 
 ## Sobre el proyecto
-El proyecto consiste en hacer un cliente de una API REST en Vue.js, usando TypeScript con el objetivo de completar la formación del grupo de trabajo. Como hoja de estilos se ha usado Bulma. Este cliente consume una [API REST ficticia](https://jsonplaceholder.typicode.com/users) realizando un CRUD. El despliegue está realizado con Docker y Electron (multiplataforma).
+El proyecto consiste en hacer un cliente de una API REST en Vue.js, usando TypeScript con el objetivo de completar la formación del grupo de trabajo. Como hoja de estilos se ha usado Bulma. Este cliente consume una [API REST ficticia](https://jsonplaceholder.typicode.com/users) realizando un CRUD. El despliegue está realizado con Docker y Electron (multiplataforma). Puedes ver un ejemplo de ejecución y despliegue en [GitHun Pages](https://joseluisgs.github.io/vue-rest-ts/).
 
 ![image01](./images/image01.png)
 
